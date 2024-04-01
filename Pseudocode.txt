@@ -1,0 +1,92 @@
+"name" is the name the player enters when is prompted
+"players" is an array that consists of the strings "Player" and  "CPU"
+"currentPlayer" holds the string value of whos turn it is
+"continutePlaying" is a boolean value that determines when the game ends if the player wants to continue playing
+"wins" is a int value that hold how many times the player has won
+"losses" is a int value that holds how many time the player has lost
+
+
+print a welcome message saying "Welcome to nim" to notify the player what they are playing
+Use the input(string) function to set "name" to what ever the player inputs
+
+While "continuePlaying" is true we loop
+	use the random.Choice function from import random to set the "currentPlayer" to either value from "players"
+	declare and set "currentSticks" to [1,3,5,7]
+	call the function "DisplaySticks" and pass in "currentSticks" to display the "currentSticks" value to the cmd
+
+		While the sum of currentSticks is greater then 0 we loop
+			If the "currentPlayer" is equal to the string value Player
+				notify it is the players turn using their name and the print function
+			
+				declare an int value called "row" and use the GetRow function to set the value
+				declare an int value called "stickAmount" and use the GetStickAmount function to set the value
+				
+				call the TakeStick function and set the "currentSticks" to the update value
+	
+				Call the printMove function to tell the player their chosen move
+				call the function "DisplaySticks" and pass in "currentSticks" to display the "currentSticks" value to the cmd
+											
+				set the "currentPlayer" to a string of CPU
+
+			Else
+				notify the player that it is the cpus turn using the print statement
+				 
+				declare an int value called "row" and set it to a random value between 0 and 3
+				while the array value of the chosen row is 0 we loop
+					set the "row" value again to a random value between 0 and 3
+			
+				declare an int value called "stickAmount" and set it to a random value between 1 and the amount of stick in the chosen row
+
+				call the TakeStick function and set the "currentSticks" to the update value
+				Call the printMove Function to tell the player the CPUs move
+				call the function "DisplaySticks" and pass in "currentSticks" to display the "currentSticks" value to the cmd
+
+		use the print function to tell the player the game is over 
+		if the currentUser is not the player
+			tell the player they have won using the print function
+			 add one to the "wins" value
+		if the ccurrnetser is the player
+			tell the player the have lost using the print function
+			add one to the "losses" value
+		
+		Ask the player if they would like to start again using the input function then using the return value set the "continuePlaying" value to false if the player enters any other then yes
+
+DisplaySticks function takes the "currentSticks" parameter
+	declare a value named "rowNumber" and set it to 0
+	for loop over the "currentSticks" array
+		print the row number and the amount of sticks in that array elemet
+		add one to the "rowNumber" value
+	use print function to display a border
+
+GetRow function takes the "currentSticks" parameter
+	declare a value named "row" and set it to zero
+	while row is equal to zero loop
+	declare a value called rowInput and set it to the players desired value
+	If the value is a valid number 
+		set the "row" value to the inputed number
+	Else
+		ask the user to try to enter a correct value
+	return the "row" value - 1		
+
+GetStickAmount functions takes the "currentSticks" and "row" parameter
+	declare the "stickAmount" value and set it to zero
+	While "stickAmount" is equal to zero loop
+		declare a value called "stickInput" and set it to the players desired value
+		If the entered value is valid 
+			set "stickAmount" to "stickInput"
+		Else 
+			ask the user to try again
+
+	return the "stickAmount" value
+
+TakeSticks functions takes the "currentSticks", "row" and "stickAmount" parameter
+	remove the sticks from the selected array element
+	return the array
+
+PrintMove functions takes the "player", "row" and "stickAmount" parameter
+	display the move of the "player" using a print function and "row" and "stickAmount"
+
+
+	
+				
+		
