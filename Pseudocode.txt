@@ -61,9 +61,9 @@ DisplaySticks function takes the "currentSticks" parameter
 GetRow function takes the "currentSticks" parameter
 	declare a value named "row" and set it to zero
 	while row is equal to zero loop
-	declare a value called rowInput and set it to the players desired value
+	declare a value called "rowInput" and set it to the players desired value
 	If the value is a valid number 
-		set the "row" value to the inputed number
+		set the "row" value to "rowInput"
 	Else
 		ask the user to try to enter a correct value
 	return the "row" value - 1		
